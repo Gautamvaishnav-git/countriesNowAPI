@@ -1,0 +1,14 @@
+type CountriesAndCities {
+  country: String
+  cities: [String]
+  iso2: String
+  iso3: String
+}
+
+type Query {
+  getCountriesAndCities(
+    country: String
+    limit: Int
+    page: Int
+  ): [CountriesAndCities]
+}

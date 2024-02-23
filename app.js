@@ -16,6 +16,7 @@ const rateLimiter = rateLimit(rateLimitConfig);
 
 const indexRouter = require('./routes/index');
 const countryRouter = require('./routes/countries');
+const gqlRouter = require('./graphql/index');
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.use(
 );
 
 /*                                                                                        *
- * Cors is enabled so the client can acces enpoint on this API wthout having to make request *
+ * Cors is enabled so the client can access endpoint on this API without having to make request *
  *  from the same Origin
  */
 app.use((req, res, next) => {
@@ -74,6 +75,7 @@ app.use((err, req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/api/v0.1/countries', countryRouter);
+app.use('/api/v0.1/graphql', gqlRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res) => res.status(404).json({

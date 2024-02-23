@@ -18,7 +18,7 @@ class Respond {
    * @param {String} msg message string for success response
    * @param {Object} data response data
    */
-  static success(res, msg = 'successs', data) {
+  static success(res, msg = 'success', data) {
     return res.status(200).json({
       error: false,
       msg,

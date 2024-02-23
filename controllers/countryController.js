@@ -80,7 +80,7 @@ class CountryController {
 
   /**
    * Get cities of a specified country
-   * @param {RequestObject} req request obeject
+   * @param {RequestObject} req request object
    * @param {ResponseObject} res response object
    * @param {Callback} next callback function that invokes the next express middleware function
    */
